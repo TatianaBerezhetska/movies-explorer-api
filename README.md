@@ -6,7 +6,7 @@ backend part for my Diploma at Yandex.Practicum
 * просмотр и редактирование профиля пользователя;
 * добавление и удаление фильмов со стороннего API в избранное.
   
-### Ссылка на сайт:
+### Домен бэкенда:
 ```sh
 berezhetska.diploma.nomorepartiesxyz.ru
 ```
