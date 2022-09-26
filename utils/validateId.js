@@ -4,7 +4,7 @@ const validateId = (id, helpers) => {
   if (isValidObjectId(id)) {
     return id;
   }
-  return helpers.error('Неверный id');
+  return helpers.message('Неверный id');
 };
 
 module.exports = validateId;

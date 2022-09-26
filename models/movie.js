@@ -46,14 +46,13 @@ const movieSchema = new mongoose.Schema({
       message: 'Укажите ссылку',
     },
   },
-  owner: [{
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
     required: true,
-    default: [],
-  }],
+  },
   movieId: {
-    type: String,
+    type: Number,
     required: true,
   },
   nameRU: {

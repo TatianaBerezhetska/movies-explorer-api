@@ -64,19 +64,13 @@ const getCurrentUser = (req, res, next) => {
       throw new NotFoundError('Пользователь по указанному _id не найден.');
     })
     .then((user) => res.send(user))
-    .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new BadRequestError('Переданы некорректные данные.'));
-      } else {
-        next(err);
-      }
-    });
+    .catch(next);
 };
 
 const updateUser = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, {
     name: req.body.name,
-    about: req.body.about,
+    email: req.body.email,
   }, { new: true, runValidators: true })
     .orFail(() => {
       throw new NotFoundError('Пользователь по указанному _id не найден.');
@@ -93,8 +87,8 @@ const updateUser = (req, res, next) => {
         } else {
           next(new BadRequestError('Одно из полей заполнено неверно'));
         }
-      } else if (err.name === 'CastError') {
-        next(new BadRequestError('Переданы некорректные данные при обновлении профиля.'));
+      } else if (err.name === 'MongoServerError' && err.code === 11000) {
+        next(new ConflictError('Пользователь с таким email уже существует'));
       } else {
         next(err);
       }
