@@ -31,11 +31,11 @@ router.post('/movies', celebrate({
     duration: Joi.number().required(),
     year: Joi.number().required(),
     description: Joi.string().required(),
-    image: Joi.string().required().custom(checkUrl),
+    image: Joi.string().required(),
     trailerLink: Joi.string().required().custom(checkUrl),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
-    thumbnail: Joi.string().required().custom(checkUrl),
+    thumbnail: Joi.string().required(),
     movieId: Joi.number().required(),
   }),
 }), saveMovie);
