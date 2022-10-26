@@ -2,8 +2,8 @@ const options = {
   origin: [
     'https://localhost:3010',
     'http://localhost:3010',
-    'https://berezhetska.students.nomoredomains.sbs',
-    'http://berezhetska.students.nomoredomains.sbs',
+    'https://berezhetska.diplomafront.nomorepartiesxyz.ru',
+    'http://berezhetska.diplomafront.nomorepartiesxyz.ru',
     'https://TatianaBerezhetska.github.io',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
