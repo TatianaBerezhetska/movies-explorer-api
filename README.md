@@ -19,3 +19,8 @@ https://cloud.yandex.com/en-ru/
 ```sh
 62.84.126.37
 ```
+
+Ссылка на frontend приложения:
+```sh
+https://github.com/TatianaBerezhetska/movies-explorer-frontend
+```
